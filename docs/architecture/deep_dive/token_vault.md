@@ -101,7 +101,7 @@ The instruction set for the vault can be found here: [https://github.com/metaple
 
 The Big Kahuna and namesake of this contract, the Vault is really a container of many concepts. The Vault can be used without any fractional share emissions as a kind of escrow service for many different tokens of different mint types, and indeed, this is what Metaplex uses it for when performing Auctions. However it can also be used to provide partial ownership of NFTs to interested investors. Let's break down the keys in the Vault's state one by one.
 
-**Fractional shares:** It points at a `fractional_mint` and `fractional_treasury`, which allows the vault authority to mint new fractional shares to a treasury account before (or optionally after) **Activation** of the vault. Shares inside the treasury don't count towards the cost of **Combining** the vault.
+**Fractional shares:** It points at a `fraction_mint` and `fraction_treasury`, which allows the vault authority to mint new fractional shares to a treasury account before (or optionally after) **Activation** of the vault. Shares inside the treasury don't count towards the cost of **Combining** the vault.
 
 **Redeem treasury:** This account is used to hold in escrow the funds used to pay off fractional shareholders when the vault authority wishes to **Combine** the vault and regain possession of the stored assets inside. The vault authority has to pay shares_in_circulation\*price_of_shares into this redeem treasury. The mint of the treasury is completely decidable by the vault authority, we make no opinions on that.
 
